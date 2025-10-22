@@ -1,3 +1,5 @@
+import * as XLSX from 'xlsx'
+
 export type meritonEnjoyer = {
     name: string;
     bankAccountName: string;
@@ -50,4 +52,17 @@ export function calculateReimbursement(group: meritonEnjoyer[], costOfMeriton: n
     }
 
     return finalReimbursementList;
+}
+
+export const sheetToJSON = (sheetPath: string): JSON[] => {
+    const workBook = XLSX.readFile(sheetPath);
+    const sheetName = workBook.SheetNames[0];
+    const sheet = workBook.Sheets[sheetName!];
+    return XLSX.utils.sheet_to_json(sheet!);
+}
+
+export const convertToMeritonEnjoyer = (meritonJSON: JSON[]): void => {
+    const meritonQuestions = meritonJSON.keys()
+
+    console.log(meritonQuestions);
 }
