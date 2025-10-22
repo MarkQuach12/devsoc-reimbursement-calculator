@@ -13,5 +13,9 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "xlsx": "^0.18.5"
   }
 }

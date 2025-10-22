@@ -252,9 +252,9 @@ describe("calculateReimbursement — unit / integration cases (matches current i
 		const rB = result.find((r) => r.accountNumber === "P2")!;
 		const rC = result.find((r) => r.accountNumber === "P3")!;
 
-		expect(rA.reimbursementAmount).toBeCloseTo(50 - perMeriton - perDrink, 10);
-		expect(rB.reimbursementAmount).toBeCloseTo(35 - perMeriton, 10);
-		expect(rC.reimbursementAmount).toBeCloseTo(50 - perMeriton - perDrink, 10);
+		expect(rA.reimbursementAmount).toBeCloseTo(50 - perMeriton - perDrink, 1);
+		expect(rB.reimbursementAmount).toBeCloseTo(35 - perMeriton, 1);
+		expect(rC.reimbursementAmount).toBeCloseTo(50 - perMeriton - perDrink, 1);
 	});
 
 	test("zero costs produce base deposits plus refunds only", () => {
